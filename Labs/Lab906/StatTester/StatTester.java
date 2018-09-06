@@ -48,14 +48,47 @@ public class StatTester{
     }
     
     public double getMedian(){
+        double valueToReturn;
         if(nums.length % 2 == 0){
             int index = (int)Math.floor(nums.length/2);
-            return (nums[index]+nums[index+1])/2;
+            valueToReturn = (nums[index]+nums[index+1])/2;
         }
         else{
             int index = (int)Math.floor(nums.length/2);
-            return nums[index];
+            valueToReturn = nums[index];
         }
+        return valueToReturn;
+    }
+    
+    public int[] getMode(){
+        int[] valuesMet = new int[10];
+        int[] numberOfOccurances = new int[10];
+        int nocAsInt = 0;
+        for(int i = 1; i < nums.length; i++){
+            numberOfOccurances[nums[i] - 1] += 1;
+        }
+        int maxNOC = 0;
+        for(int i = 1; i <= 10; i++){
+            if(numberOfOccurances[i - 1] > maxNOC){
+                maxNOC = numberOfOccurances[i-1];
+                valuesMet = new int[1];
+                valuesMet[0] = i;
+                nocAsInt = 1;
+            }
+            else if(numberOfOccurances[i-1] == maxNOC){
+                int[] placeHolderValues = new int[nocAsInt + 1];
+                placeHolderValues = valuesMet;
+                placeHolderValues[nocAsInt] = i - 1;
+                valuesMet = new int[placeHolderValues.length];
+                valuesMet = placeHolderValues;
+                nocAsInt += 1;
+                
+            }
+        }
+        return valuesMet;
+        
+        
+        
     }
     
     
