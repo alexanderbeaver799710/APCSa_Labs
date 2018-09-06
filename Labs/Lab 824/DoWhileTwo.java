@@ -12,5 +12,6 @@ public class DoWhileTwo
 		   System.out.println("loop");
 		   run=run-5;
 		} while(run>=10);
+		//Final value 5
 	}
 }

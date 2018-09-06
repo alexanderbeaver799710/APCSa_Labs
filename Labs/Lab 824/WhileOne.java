@@ -13,6 +13,7 @@ public class WhileOne
 		   System.out.println(run);	//3 - code
 
 		   //add code to print your name
+		   System.out.println("ALEX");
 		}
 	}
 }
