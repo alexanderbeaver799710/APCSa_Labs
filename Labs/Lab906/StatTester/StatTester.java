@@ -80,7 +80,7 @@ public class StatTester{
             else if(numberOfOccurances[i-1] == maxNOC){
                 int[] placeHolderValues = new int[nocAsInt + 1];
                 placeHolderValues = valuesMet;
-                placeHolderValues[nocAsInt] = i - 1;
+                placeHolderValues[nocAsInt] = i;
                 valuesMet = new int[placeHolderValues.length];
                 valuesMet = placeHolderValues;
                 nocAsInt += 1;
