@@ -16,6 +16,7 @@ public class StatTester{
     // Constructor
     public StatTester(){
         nums = new int[100];
+        Arrays.sort(nums);
     }
     
     
@@ -48,6 +49,7 @@ public class StatTester{
     }
     
     public double getMedian(){
+        
         double valueToReturn;
         if(nums.length % 2 == 0){
             int index = (int)Math.floor(nums.length/2);
